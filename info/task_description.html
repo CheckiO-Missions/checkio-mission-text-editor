@@ -1,17 +1,17 @@
 <p>
-I think that many of you have met such a problem: you are working with the text editor, then save the document and close the editor. At the next day you are rereading the text and understand that one of the previous versions was better but there is no way to return it. This problem could be solved with the version control system (for example, git), but it is used by developers, mostly, not by common people who work with texts. In this mission you will help to this people by creating a prototype of the text editor with the version control system, which will allow to save different versions of the text and restore any of them.<br>
-You task is to create 2 classes: Text and SavedText. The first will works with the texts (adding, font changing etc.), the second will control the versions and save them.<br><br>
+I believe that many of you have dealt with such a problem. One day you are working in the text editor, saving the document and closing it. And the next day you are re-reading the text and realizing that one of the previous versions was better but there is no way to get it back. This thing can be easily handled by the version control system (for example, git), but it’s used mostly by the developers and not the ordinary people who work with texts. In this mission you’ll help the latter by creating a text editor prototype that supports the version control system, which will allow to save different versions of the text and restore any one of them.<br>
+Your task is to create 2 classes: Text and SavedText. The first will works with texts (adding, font changing, etc.), the second will control the versions and save them.<br><br>
 Class Text should have the next methods:<br>
-<strong>write</strong>(text) - adds (text) to the current text.<br>
-<strong>set_font</strong>(font name) - sets chosen font. Font is applied to the whole text even if it was added after the font was set. The font displayed in the square brackets before the text and after: "[Arial]...example...[Arial]". Font could be set multiple times but only the last variant is displays.<br>
-<strong>show()</strong> - returns the current text and font (if is was set).<br>
-<strong>restore</strong>(SavedText.get_version(number)) - restore the text of the chosen version.<br>
+<strong>write</strong>(text) - adds (text) to the current text;<br>
+<strong>set_font</strong>(font name) - sets the chosen font. Font is applied to the whole text, even if it’s added after the font is set. The font is displayed in the square brackets before and after the text: "[Arial]...example...[Arial]". Font can be specified multiple times but only the last variant is displays;<br>
+<strong>show()</strong> - returns the current text and font (if is was set);<br>
+<strong>restore</strong>(SavedText.get_version(number)) - restores the text of the chosen version.<br>
 <br>
 Class SavedText should have the next methods:<br>
-<strong>save_text</strong>(Text) - save the current text and font. The first saved version has the number 0, the second - 1 and so on.<br>
-<strong>get_version</strong>(number) - this method is work with the method 'restore' and used for choosing the righе version of the text.<br>
+<strong>save_text</strong>(Text) - saves the current text and font. The first saved version has the number 0, the second - 1, and so on;<br>
+<strong>get_version</strong>(number) - this method works with the 'restore' method and is used for choosing the needed version of the text.<br>
 <br>
-In this mission you could use the <a href='https://en.wikipedia.org/wiki/Memento_pattern'>Memento</a> design pattern.
+In this mission you can use the <a href='https://en.wikipedia.org/wiki/Memento_pattern'>Memento</a> design pattern.
 </p>
 
 <p>
@@ -33,20 +33,20 @@ text.show() == "At the very beginning "
 </p>
 
 <p>
-    <strong>Input: </strong>information about text and saves.
+    <strong>Input: </strong>information about the text and saved copies.
 </p>
 
 <p>
-    <strong>Output: </strong>text after all commands.
+    <strong>Output: </strong>the text after all of the commands.
 </p>
 
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    For the save of the object previous states with possibility to return to them if something go wrong.
+    To save the object’s previous states with the ability to return to them, in case something goes wrong.
 </p>
 
 <p>
     <strong>Precondition:</strong>
-    No more than 10 saves.
+    No more than 10 saved copies.
 </p>
